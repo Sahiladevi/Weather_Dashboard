@@ -8,9 +8,6 @@ from datetime import datetime
 from dotenv import load_dotenv
 import os
 
-
-
-
 # PART 2: Set the API and URL
 BASE_URL = "https://api.openweathermap.org/data/2.5/forecast"
 
@@ -55,8 +52,8 @@ def parse_forecast(json_data):
     return df
 
 # PART 6: Create the Web App Interface (Builds the app layout)
-st.set_page_config(page_title="🌦️ Dynamic Weather Dashboard", layout="centered")
-st.title("🌦️ Dynamic Weather Dashboard")
+st.set_page_config(page_title="Dynamic Weather Dashboard", layout="centered")
+st.title("Dynamic Weather Dashboard")
 
 # PART 7:Get default city from IP location ( Choose the City ( Lets you enter/select a city))
 default_city = get_city_from_ip()
@@ -79,10 +76,10 @@ if city:
         # PART 9: Show Forecast Graphs (Displays nice graphs)
         df = parse_forecast(data)
 
-        st.subheader("📈 5-Day Forecast Trends")
+        st.subheader("5-Day Forecast Trends")
 
         # Tabs for different weather trends
-        tabs = st.tabs(["🌡️ Temperature", "💧 Humidity", "🔽 Pressure", "🍃 Wind Speed"])
+        tabs = st.tabs(["Temperature", "Humidity", "Pressure", "Wind Speed"])
 
         with tabs[0]:
             fig1 = px.line(df, x='datetime', y='temperature', title='Temperature Over Time')
