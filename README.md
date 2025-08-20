@@ -115,7 +115,6 @@ seaborn
 plotly
 jupyter
 streamlit
-Pillow
 
 ```
 
@@ -138,8 +137,8 @@ Make sure your virtual environment is active and install the required packages i
 
 ```bash
 pip install -r requirements.txt
-
-### Run the Streamlit app
+```
+### 2. Run the Streamlit app
 
 streamlit run weather_dashboard.py
 
@@ -159,7 +158,7 @@ file name: weather_forecast.ipynb
 
 ---
 
-## CODE:
+## CODE: weather_dashboard.py
 
 '''
 This code creates a web app that:
