@@ -1,53 +1,127 @@
-# 🌦️ Dynamic Weather Dashboard using Python, Pandas & OpenWeather API
+# Dynamic Weather Dashboard using Python, Pandas & OpenWeather API
 
-## 📄 Description
+## Description
 
 A data-driven dashboard that allows users to search for any city and retrieve current weather conditions along with a 5-day forecast. Built with **Python**, **Pandas**, and **Streamlit**, the app fetches real-time data from the **OpenWeatherMap API** and visualizes it using **Plotly**. It provides dynamic, interactive time-series plots for temperature and humidity, with clean UI and error handling for invalid inputs.
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 - Python 3.7+
-- [Streamlit](https://streamlit.io/)
-- [Pandas](https://pandas.pydata.org/)
-- [Requests](https://docs.python-requests.org/)
-- [Plotly](https://plotly.com/python/)
+- Streamlit
+- Pandas
+- Requests
+- Plotly
 - [OpenWeatherMap API](https://openweathermap.org/api)
 
 ---
 
-## 🚀 Features
+## Features
 
-- 🌍 Search weather by city name
-- 📅 View 5-day forecast (3-hour intervals)
-- 📈 Interactive time-series plots for temperature and humidity
-- 🧹 Clean and user-friendly interface
-- ⚠️ Error handling for invalid city names or API limits
-- 🌐 Add location-based auto-detection
-- 📊 Add more weather metrics (wind speed, pressure, etc.)
+-  Search weather by city name
+-  View 5-day forecast (3-hour intervals)
+-  Interactive time-series plots for temperature and humidity
+-  Clean and user-friendly interface
+-  Error handling for invalid city names or API limits
+-  Add location-based auto-detection
+-  Add more weather metrics (wind speed, pressure, etc.)
 
 ---
 
-## 🔑 Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/weather-dashboard.git
-cd weather-dashboard
+git clone https://github.com/Sahiladevi/Weather_Dashboard.git
+```
+### 2. Navigate to the cloned directory
 
-✅ If you’re working in a virtual environment (recommended):
-Activate your virtual environment
-For example:
-# Windows
-.\venv\Scripts\activate
+Change your current directory to the cloned repository's directory
 
-### Install packages as needed
-pip install streamlit pandas requests plotly
+```bash
+cd Weather_Dashboard
+```
 
-### Generate the requirements.txt file
-pip freeze > requirements.txt
+### 3. Create Virtual Environment
+
+On Windows:
+```bash
+python -m venv venv
+```
+
+On macOS and Linux:
+```bash
+python3 -m venv venv
+```
+
+This will create a new virtual environment named venv in your current directory
+
+### 4. Activate Virtual Environment
+
+On Windows:
+```bash
+venv\Scripts\activate
+```
+On macOS and Linux:
+```bash
+source venv/bin/activate
+```
+Your prompt should change to indicate that you are now operating within a Python virtual environment.
+
+### 5. Install Requirements
+
+Install the required packages by running the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+**Note:** Make sure ipykernel is included in the requirements.txt file. If not, install it manually:
+
+```bash
+pip install ipykernel
+```
+### 6. Register the Environment as a Jupyter Kernel
+
+```bash
+python -m ipykernel install --user --name=venv --display-name "Python (weather_dashboard)"
+```
+This step lets you select this environment inside Jupyter.
+
+### 7. Run Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+### 8. To deactivate the virtual environment, after running the project
+
+```bash
+deactivate
+```
+---
+
+## Requirements
+
+Contents of `requirements.txt`:
+
+```
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+jupyter
+streamlit
+Pillow
+
+```
+
+> Only the necessary libraries are included to keep things clean and lightweight. A virtual environment was used to avoid any conflicts and keep the setup isolated from the rest of the system. 
+
+---
 
 ### Get Your OpenWeatherMap API Key
 
@@ -146,8 +220,8 @@ def parse_forecast(json_data):
 # PART 6: Create the Web App Interface (Builds the app layout)
 # This sets up the title and basic layout of the app.
 
-st.set_page_config(page_title="🌦️ Dynamic Weather Dashboard", layout="centered")
-st.title("🌦️ Dynamic Weather Dashboard")
+st.set_page_config(page_title=" Dynamic Weather Dashboard", layout="centered")
+st.title(" Dynamic Weather Dashboard")
 
 # PART 7: Choose the City ( Lets you enter/select a city)
 '''
@@ -181,18 +255,18 @@ if city:
         This:
         Converts the forecast into a table.
         Shows tabs with interactive line graphs of:
-            🌡️ Temperature
-            💧 Humidity
-            🔽 Pressure
-            🍃 Wind Speed
+            Temperature
+            Humidity
+            Pressure
+            Wind Speed
 
         '''
         df = parse_forecast(data)
 
-        st.subheader("📈 5-Day Forecast Trends")
+        st.subheader(" 5-Day Forecast Trends")
 
         # Tabs for different weather trends
-        tabs = st.tabs(["🌡️ Temperature", "💧 Humidity", "🔽 Pressure", "🍃 Wind Speed"])
+        tabs = st.tabs(["Temperature", "Humidity", "Pressure", "Wind Speed"])
 
         with tabs[0]:
             fig1 = px.line(df, x='datetime', y='temperature', title='Temperature Over Time')
