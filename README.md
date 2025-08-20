@@ -152,6 +152,21 @@ Press Ctrl + C in the terminal to stop the app when finished.
 
 ---
 
+### Deploying the App Online (Optional)
+
+To deploy the app on [Streamlit Cloud](https://streamlit.io/cloud):
+
+1. Push your project to a public GitHub repository.
+2. Go to [Streamlit Cloud](https://streamlit.io/cloud) and sign in with your GitHub account.
+3. Click on **"Create app"**.
+4. Choose the repository and the branch, then set the main file path: dashboard/health_track_app.py
+5. Add necessary environment variables or secrets if any.
+6. Click **"Deploy"** — app will be live in seconds.
+
+>**Tip**: Make sure your `requirements.txt` is up to date with all dependencies.
+
+---
+
 ## Data visualization for daily weather and 5-day forecast summary
 
 file name: weather_forecast.ipynb
