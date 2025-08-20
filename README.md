@@ -123,14 +123,41 @@ Pillow
 
 ---
 
-### Get Your OpenWeatherMap API Key
+## Get Your OpenWeatherMap API Key
 
 Sign up at OpenWeatherMap
 Go to your dashboard and copy your API key
 
-### Run the App
+---
+
+##  How to Run the Streamlit App
+
+### 1. Ensure dependencies are installed
+
+Make sure your virtual environment is active and install the required packages if you haven’t already:
+
+```bash
+pip install -r requirements.txt
+
+### Run the Streamlit app
 
 streamlit run weather_dashboard.py
+
+### 3. View in browser
+
+Streamlit will open the app automatically in your default web browser. If not, copy the URL from the terminal (usually http://localhost:8501) and paste it into your browser.
+
+### 4. Stop the app
+
+Press Ctrl + C in the terminal to stop the app when finished.
+
+---
+
+## Data visualization for daily weather and 5-day forecast summary
+
+file name: weather_forecast.ipynb
+
+---
 
 ## CODE:
 
